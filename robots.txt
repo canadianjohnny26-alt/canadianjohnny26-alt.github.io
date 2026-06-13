@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Point search engines directly to your sitemap
+Sitemap: https://canadianjohnny26-alt.github.io/sitemap.xml
