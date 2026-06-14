@@ -343,8 +343,58 @@ progress::-webkit-progress-value {
         const words = text.trim().split(/\s+/).filter(word => word.length > 0);
         const wordCount = words.length;
 
-        document.getElementById('total-chars').innerText = charCount;
-        document.getElementById('total-words').innerText = wordCount;
+        d// 1. Capture the raw text content length 
+const currentLength = mainText.length;
+
+// 2. Global Dynamic Hashtag Counter (Counts every '#' symbol typed)
+const totalHashtags = (mainText.match(/#/g) || []).length;
+
+// --- 1. YOUTUBE RECALCULATION ---
+document.getElementById('yt-title-count').textContent = currentLength;
+document.getElementById('yt-title-bar').value = currentLength;
+
+document.getElementById('yt-desc-count').textContent = currentLength;
+document.getElementById('yt-desc-bar').value = currentLength;
+
+document.getElementById('yt-tag-count').textContent = totalHashtags;
+document.getElementById('yt-tag-bar').value = totalHashtags;
+
+// --- 2. X / TWITTER RECALCULATION ---
+document.getElementById('x-post-count').textContent = currentLength;
+document.getElementById('x-post-bar').value = currentLength;
+
+document.getElementById('x-tag-count').textContent = totalHashtags;
+document.getElementById('x-tag-bar').value = totalHashtags;
+
+// --- 3. INSTAGRAM RECALCULATION ---
+document.getElementById('ig-desc-count').textContent = currentLength;
+document.getElementById('ig-desc-bar').value = currentLength;
+
+document.getElementById('ig-tag-count').textContent = totalHashtags;
+document.getElementById('ig-tag-bar').value = totalHashtags;
+
+// --- 4. FACEBOOK RECALCULATION ---
+document.getElementById('fb-post-count').textContent = currentLength;
+document.getElementById('fb-post-bar').value = currentLength;
+
+// --- 5. THREADS RECALCULATION ---
+document.getElementById('th-post-count').textContent = currentLength;
+document.getElementById('th-post-bar').value = currentLength;
+
+// --- 6. LINKEDIN RECALCULATION ---
+document.getElementById('li-title-count').textContent = currentLength;
+document.getElementById('li-title-bar').value = currentLength;
+
+document.getElementById('li-desc-count').textContent = currentLength;
+document.getElementById('li-desc-bar').value = currentLength;
+
+// --- 7. TIKTOK RECALCULATION ---
+document.getElementById('tt-desc-count').textContent = currentLength;
+document.getElementById('tt-desc-bar').value = currentLength;
+
+// --- 8. GOOGLE SEO RECALCULATION ---
+document.getElementById('seo-title-count').textContent = currentLength;
+document.getElementById('seo-title-bar').value = currentLength;
 
  // Calculate total hashtags in the main text box
     const totalHashtags = (text.match(/#/g) || []).length;
