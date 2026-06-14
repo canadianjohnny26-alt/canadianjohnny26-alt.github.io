@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Social Media Character Counter & Text Cleaner | Creator Studio</title>
     <meta name="description" content="Free online text utility tool. Count characters and optimize caption lengths for YouTube, X, LinkedIn, Threads, Instagram, TikTok, Facebook, and Google SEO simultaneously.">
-    <meta name="keywords" content="character counter, social media caption counter, twitter character limit, linkedin post length checker, threads text limit, text cleaner online">
+    <meta name="keywords" content="character counter, social media caption counter, twitter character limit, linkedin post length checker, threads text limit, text cleaner online, hashtag counter">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -51,18 +51,21 @@
             color: var(--text-muted);
         }
 
-        /* Top Responsive Ad Slot */
-        .ad-container-top {
-            margin: 0 auto 25px auto;
-            text-align: center;
-            max-width: 728px;
-            min-height: 90px;
-            background: #edf2f7;
-            border: 1px dashed #cbd5e1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+        /* Responsive Ad Slots (Top & Bottom Workspace Advertisements) */
+.ad-container-top, .ad-container-bottom {
+    margin: 20px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 728px; /* Scales down smoothly on mobile screens */
+    min-height: 90px;
+    background: #edf2f7;
+    border: 1px dashed #cbd5e1;
+    border-radius: 10px; /* Clean rounded look matching workspace cards */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensures ad content frames do not break corner curves */
+}
 
         /* Workspace Main Layout Box */
         .workspace-area {
