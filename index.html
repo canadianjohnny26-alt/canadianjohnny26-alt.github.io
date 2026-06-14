@@ -72,6 +72,67 @@
         .seo-content-block p { color: #4a5568; margin-bottom: 15px; }
         .seo-content-block ul { margin-left: 20px; margin-bottom: 15px; color: #4a5568; }
         .seo-content-block li { margin-bottom: 5px; }
+        .counters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+.counter-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+.counter-card h3 {
+    margin: 0 0 14px 0;
+    font-size: 15px;
+    color: #2d3748;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.counter-row {
+    margin-bottom: 12px;
+}
+.counter-row:last-child {
+    margin-bottom: 0;
+}
+.counter-row label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #718096;
+    margin-bottom: 4px;
+}
+.progress-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+progress {
+    flex-grow: 1;
+    height: 8px;
+    border-radius: 4px;
+    appearance: none;
+    border: none;
+}
+progress::-webkit-progress-bar {
+    background-color: #edf2f7;
+    border-radius: 4px;
+}
+progress::-webkit-progress-value {
+    background-color: #3498db; /* Sleek default brand blue */
+    border-radius: 4px;
+}
+.count-txt {
+    font-size: 11px;
+    color: #4a5568;
+    font-weight: bold;
+    min-width: 55px;
+    text-align: right;
+}
     </style>
     <script data-goatcounter="https://canadianjohnny26.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
@@ -119,56 +180,132 @@
             </div>
         </div>
 
-        <div class="grid">
-            <div class="platform-card" id="card-yt">
-                <div class="platform-header"><span>YouTube Title</span><span id="yt-count">0 / 100</span></div>
-                <div class="progress-bar-container"><div id="yt-bar" class="progress-bar"></div></div>
-                <div id="yt-status" class="status-text">Safe length</div>
+        <div class="counters-grid">
+
+    <div class="counter-card" id="card-youtube">
+        <h3><i class="fab fa-youtube"></i> YouTube Workspace</h3>
+        <div class="counter-row">
+            <label>Title Counter:</label>
+            <div class="progress-wrapper">
+                <progress id="yt-title-bar" value="0" max="100"></progress>
+                <span class="count-txt"><span id="yt-title-count">0</span>/100</span>
             </div>
-            <div class="platform-card" id="card-x">
-                <div class="platform-header"><span>X (Twitter) Post</span><span id="x-count">0 / 280</span></div>
-                <div class="progress-bar-container"><div id="x-bar" class="progress-bar"></div></div>
-                <div id="x-status" class="status-text">Safe length</div>
+        </div>
+        <div class="counter-row">
+            <label>Description Counter:</label>
+            <div class="progress-wrapper">
+                <progress id="yt-desc-bar" value="0" max="5000"></progress>
+                <span class="count-txt"><span id="yt-desc-count">0</span>/5000</span>
             </div>
-            <div class="platform-card" id="card-ln">
-                <div class="platform-header"><span>LinkedIn Post</span><span id="ln-count">0 / 3000</span></div>
-                <div class="progress-bar-container"><div id="ln-bar" class="progress-bar"></div></div>
-                <div id="ln-status" class="status-text">Safe length</div>
-            </div>
-            <div class="platform-card" id="card-th">
-                <div class="platform-header"><span>Meta Threads</span><span id="th-count">0 / 500</span></div>
-                <div class="progress-bar-container"><div id="th-bar" class="progress-bar"></div></div>
-                <div id="th-status" class="status-text">Safe length</div>
-            </div>
-            <div class="platform-card" id="card-ig">
-                <div class="platform-header"><span>Instagram Caption</span><span id="ig-count">0 / 2200</span></div>
-                <div class="progress-bar-container"><div id="ig-bar" class="progress-bar"></div></div>
-                <div id="ig-status" class="status-text">Safe length</div>
-            </div>
-            <div class="platform-card" id="card-tt">
-                <div class="platform-header"><span>TikTok Caption</span><span id="tt-count">0 / 2200</span></div>
-                <div class="progress-bar-container"><div id="tt-bar" class="progress-bar"></div></div>
-                <div id="tt-status" class="status-text">Safe length</div>
-            </div>
-            <div class="platform-card" id="card-fb">
-                <div class="platform-header"><span>Facebook Post</span><span id="fb-count">0 / 5000</span></div>
-                <div class="progress-bar-container"><div id="fb-bar" class="progress-bar"></div></div>
-                <div id="fb-status" class="status-text">Safe length</div>
-            </div>
-            <div class="platform-card" id="card-seo">
-                <div class="platform-header"><span>Google SEO Title</span><span id="seo-count">0 / 60</span></div>
-                <div class="progress-bar-container"><div id="seo-bar" class="progress-bar"></div></div>
-                <div id="seo-status" class="status-text">Safe length</div>
-            </div>
-            <div class="platform-card">
-                <div class="platform-header"><span>General Totals</span><span>Metrics</span></div>
-                <div style="font-size: 14px; line-height: 1.6; color: #4a5568;">
-                    Total Characters: <strong id="total-chars">0</strong><br>
-                    Total Words: <strong id="total-words">0</strong>
-                </div>
+        </div>
+        <div class="counter-row">
+            <label>Hashtag Counter:</label>
+            <div class="progress-wrapper">
+                <progress id="yt-tag-bar" value="0" max="15"></progress>
+                <span class="count-txt"><span id="yt-tag-count">0</span>/15</span>
             </div>
         </div>
     </div>
+
+    <div class="counter-card" id="card-x">
+        <h3><i class="fab fa-x-twitter"></i> X (Twitter) Workspace</h3>
+        <div class="counter-row">
+            <label>Post/Tweet Counter:</label>
+            <div class="progress-wrapper">
+                <progress id="x-post-bar" value="0" max="280"></progress>
+                <span class="count-txt"><span id="x-post-count">0</span>/280</span>
+            </div>
+        </div>
+        <div class="counter-row">
+            <label>Hashtag Counter:</label>
+            <div class="progress-wrapper">
+                <progress id="x-tag-bar" value="0" max="10"></progress>
+                <span class="count-txt"><span id="x-tag-count">0</span>/10</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="counter-card" id="card-instagram">
+        <h3><i class="fab fa-instagram"></i> Instagram Workspace</h3>
+        <div class="counter-row">
+            <label>Caption Counter:</label>
+            <div class="progress-wrapper">
+                <progress id="ig-desc-bar" value="0" max="2200"></progress>
+                <span class="count-txt"><span id="ig-desc-count">0</span>/2200</span>
+            </div>
+        </div>
+        <div class="counter-row">
+            <label>Hashtag Counter:</label>
+            <div class="progress-wrapper">
+                <progress id="ig-tag-bar" value="0" max="30"></progress>
+                <span class="count-txt"><span id="ig-tag-count">0</span>/30</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="counter-card" id="card-facebook">
+        <h3><i class="fab fa-facebook"></i> Facebook Workspace</h3>
+        <div class="counter-row">
+            <label>Post Counter:</label>
+            <div class="progress-wrapper">
+                <progress id="fb-post-bar" value="0" max="5000"></progress>
+                <span class="count-txt"><span id="fb-post-count">0</span>/5000</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="counter-card" id="card-threads">
+        <h3><i class="fa-brands fa-threads"></i> Threads Workspace</h3>
+        <div class="counter-row">
+            <label>Thread Post Counter:</label>
+            <div class="progress-wrapper">
+                <progress id="th-post-bar" value="0" max="5000"></progress>
+                <span class="count-txt"><span id="th-post-count">0</span>/500</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="counter-card" id="card-linkedin">
+        <h3><i class="fab fa-linkedin"></i> LinkedIn Workspace</h3>
+        <div class="counter-row">
+            <label>Headline/Hook Counter:</label>
+            <div class="progress-wrapper">
+                <progress id="li-title-bar" value="0" max="140"></progress>
+                <span class="count-txt"><span id="li-title-count">0</span>/140</span>
+            </div>
+        </div>
+        <div class="counter-row">
+            <label>Article Body Counter:</label>
+            <div class="progress-wrapper">
+                <progress id="li-desc-bar" value="0" max="3000"></progress>
+                <span class="count-txt"><span id="li-desc-count">0</span>/3000</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="counter-card" id="card-tiktok">
+        <h3><i class="fab fa-tiktok"></i> TikTok Workspace</h3>
+        <div class="counter-row">
+            <label>Video Caption / SEO Counter:</label>
+            <div class="progress-wrapper">
+                <progress id="tt-desc-bar" value="0" max="2200"></progress>
+                <span class="count-txt"><span id="tt-desc-count">0</span>/2200</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="counter-card" id="card-seo">
+        <h3><i class="fab fa-google"></i> Google Search SEO</h3>
+        <div class="counter-row">
+            <label>Meta Title Counter:</label>
+            <div class="progress-wrapper">
+                <progress id="seo-title-bar" value="0" max="60"></progress>
+                <span class="count-txt"><span id="seo-title-count">0</span>/60</span>
+            </div>
+        </div>
+    </div>
+
+</div>
 
     <!-- REVENUE SLOT 2: BOTTOM RESPONSIVE BANNER -->
     <div class="ad-wrapper">
@@ -209,14 +346,59 @@
         document.getElementById('total-chars').innerText = charCount;
         document.getElementById('total-words').innerText = wordCount;
 
-        updateTracker('yt', charCount, 100);
-        updateTracker('x', charCount, 280);
-        updateTracker('ln', charCount, 3000);
-        updateTracker('th', charCount, 500);
-        updateTracker('ig', charCount, 2200);
-        updateTracker('tt', charCount, 2200);
-        updateTracker('fb', charCount, 5000);
-        updateTracker('seo', charCount, 60);
+ // Calculate total hashtags in the main text box
+    const totalHashtags = (text.match(/#/g) || []).length;
+
+    // --- 1. YOUTUBE WORKSPACE ---
+    updateTracker('yt-title', charCount, 100);
+    updateTracker('yt-desc', charCount, 5000);
+    const ytTagBar = document.getElementById('yt-tag-bar');
+    const ytTagCount = document.getElementById('yt-tag-count');
+    if(ytTagBar) ytTagBar.value = totalHashtags;
+    if(ytTagCount) ytTagCount.textContent = totalHashtags;
+
+    // --- 2. X / TWITTER WORKSPACE ---
+    updateTracker('x-post', charCount, 280);
+    const xTagBar = document.getElementById('x-tag-bar');
+    const xTagCount = document.getElementById('x-tag-count');
+    if(xTagBar) xTagBar.value = totalHashtags;
+    if(xTagCount) xTagCount.textContent = totalHashtags;
+
+    // --- 3. INSTAGRAM WORKSPACE ---
+    updateTracker('ig-desc', charCount, 2200);
+    const igTagBar = document.getElementById('ig-tag-bar');
+    const igTagCount = document.getElementById('ig-tag-count');
+    if(igTagBar) igTagBar.value = totalHashtags;
+    if(igTagCount) igTagCount.textContent = totalHashtags;
+
+    // --- 4. FACEBOOK WORKSPACE ---
+    updateTracker('fb-post', charCount, 5000);
+    const fbTagBar = document.getElementById('fb-tag-bar');
+    const fbTagCount = document.getElementById('fb-tag-count');
+    if(fbTagBar) fbTagBar.value = totalHashtags;
+    if(fbTagCount) fbTagCount.textContent = totalHashtags;
+
+    // --- 5. THREADS WORKSPACE ---
+    updateTracker('th-post', charCount, 500);
+    const thTagBar = document.getElementById('th-tag-bar');
+    const thTagCount = document.getElementById('th-tag-count');
+    if(thTagBar) thTagBar.value = totalHashtags;
+    if(thTagCount) thTagCount.textContent = totalHashtags;
+
+    // --- 6. LINKEDIN WORKSPACE ---
+    updateTracker('li-title', charCount, 140);
+    updateTracker('li-desc', charCount, 3000);
+
+    // --- 7. TIKTOK WORKSPACE ---
+    updateTracker('tt-desc', charCount, 2200);
+    const ttTagBar = document.getElementById('tt-tag-bar');
+    const ttTagCount = document.getElementById('tt-tag-count');
+    if(ttTagBar) ttTagBar.value = totalHashtags;
+    if(ttTagCount) ttTagCount.textContent = totalHashtags;
+
+    // --- 8. GOOGLE SEO WORKSPACE ---
+    updateTracker('seo-title', charCount, 60);
+    updateTracker('seo-desc', charCount, 160); // Standard SEO Meta Description Limit
     }
 
     function updateTracker(id, current, max) {
