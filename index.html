@@ -51,21 +51,49 @@
             color: var(--text-muted);
         }
 
-        /* Responsive Ad Slots (Top & Bottom Workspace Advertisements) */
-.ad-container-top, .ad-container-bottom {
-    margin: 20px auto;
-    text-align: center;
-    width: 100%;
-    max-width: 728px; /* Scales down smoothly on mobile screens */
-    min-height: 90px;
-    background: #edf2f7;
-    border: 1px dashed #cbd5e1;
-    border-radius: 10px; /* Clean rounded look matching workspace cards */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; /* Ensures ad content frames do not break corner curves */
-}
+
+    .ad-container-top {
+        margin: 20px auto 25px auto;
+        text-align: center;
+        
+        /* Forces the ad banner to match the exact width of your workspace text box */
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        
+        /* Styling constraints matching your workspace cards */
+        min-height: 90px;
+        background: #edf2f7;
+        border: 1px dashed #cbd5e1;
+        border-radius: 10px; /* Smooth rounded corners */
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Prevents raw ad frames from breaking the corners */
+    }
+
+        .ad-container-bottom {
+        margin: 25px auto 20px auto;
+        text-align: center;
+        
+        /* Forces the ad banner to match the exact width of your workspace text box */
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        
+        /* Styling constraints matching your workspace cards */
+        min-height: 90px;
+        background: #edf2f7;
+        border: 1px dashed #cbd5e1;
+        border-radius: 10px; /* Smooth rounded corners */
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Prevents raw ad frames from breaking the corners */
+    }
+
 
         /* Workspace Main Layout Box */
         .workspace-area {
@@ -269,12 +297,12 @@
         <p>Optimize character limits, clean duplicate spacing, and handle formatting constraints across all social apps.</p>
     </header>
 
-    <div class="ad-container-top" style="margin: 0 auto 25px auto; text-align: center; max-width: 728px; min-height: 90px; background: #edf2f7; border: 1px dashed #cbd5e1; display: flex; align-items: center; justify-content: center;">
+  <div class="ad-container-top">
     <ins class="adsbygoogle"
-         style="display:block"
+         style="display:block; width:100%; max-width:100%; border-radius:10px;"
          data-ad-client="ca-pub-7553816845954251"
          data-ad-slot="9012345678"
-         data-ad-format="auto"
+         data-ad-format="horizontal"
          data-full-width-responsive="true"></ins>
     <script>
          (adsbygoogle = window.adsbygoogle || []).push({});
@@ -495,12 +523,12 @@
 
     </div>
 
-    <div class="ad-container-bottom" style="margin: 25px auto 0 auto; text-align: center; max-width: 728px; min-height: 90px; background: #edf2f7; border: 1px dashed #cbd5e1; display: flex; align-items: center; justify-content: center;">
+    <div class="ad-container-bottom">
     <ins class="adsbygoogle"
-         style="display:block"
+         style="display:block; width:100%; max-width:100%; border-radius:10px;"
          data-ad-client="ca-pub-7553816845954251"
          data-ad-slot="1234567890"
-         data-ad-format="auto"
+         data-ad-format="horizontal"
          data-full-width-responsive="true"></ins>
     <script>
          (adsbygoogle = window.adsbygoogle || []).push({});
